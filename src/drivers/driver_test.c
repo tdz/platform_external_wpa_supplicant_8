@@ -1749,6 +1749,8 @@ static void wpa_driver_test_scanresp(struct wpa_driver_test_data *drv,
 	ie_pos += len;
 	res->ie_len = ie_pos - ie_start;
 
+	res->caps |= IEEE80211_CAP_ESS;
+
 	if (pos2) {
 		pos = pos2 + 1;
 		while (*pos == ' ')
