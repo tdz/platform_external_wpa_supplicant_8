@@ -230,7 +230,7 @@ int random_pool_ready(void)
 	 * so use non-blocking read to avoid blocking the application
 	 * completely.
 	 */
-	fd = open("/dev/random", O_RDONLY | O_NONBLOCK);
+	fd = open("/dev/urandom", O_RDONLY | O_NONBLOCK);
 	if (fd < 0) {
 		wpa_printf(MSG_ERROR, "random: Cannot open /dev/random: %s",
 			   strerror(errno));
